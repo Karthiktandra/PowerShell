@@ -1,5 +1,9 @@
 ﻿#Login-AzureRmAccount
 
+$AzureCreds = Get-AutomationPSCredential -Name 'cred'
+Connect-AzureRmAccount -Credential $AzureCreds
+
+
 $rsvaultname1 = "Azure-Backup-Vault-Dev"
 $rsvaultname2 = "Azure-Backup-Vault-Prod"
 $backupPolicy1 = "my-policy"
