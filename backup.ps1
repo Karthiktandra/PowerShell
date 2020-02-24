@@ -1,6 +1,6 @@
 ﻿#Login-AzureRmAccount
 
-$AzureCreds = Get-AutomationPSCredential -Name 'cred'
+$AzureCreds = Get-AutomationPSCredential -Name 'credential1'
 Connect-AzureRmAccount -Credential $AzureCreds
 
 
