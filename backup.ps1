@@ -1,7 +1,7 @@
-	$passwd = '69a930b7-f38a-437a-92c6-2966bdfc297b’ | ConvertTo-SecureString -AsPlainText -Force
-        $AppUserId = "607e8b31-37b4-467b-a623-c4702a20fd6b"
-        $tenant = "7571a489-bd29-4f38-b9a6-7c880f8cddf0"
-        $subscription = "84e4a2d3-4d52-4e80-92bd-c9634d76f301"
+	$passwd = '*************************’ | ConvertTo-SecureString -AsPlainText -Force
+        $AppUserId = "*************************"
+        $tenant = "*************************"
+        $subscription = "*************************"
         $pscredential = New-Object System.Management.Automation.PSCredential($AppUserId, $passwd)
         Connect-AzureRmAccount -ServicePrincipal -Credential $pscredential -Tenant $tenant -Subscription $subscription
 		$vm = Get-AzureRmVM
