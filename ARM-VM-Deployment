@@ -14,15 +14,9 @@
         "description": "User name for the Virtual Machine."
       }
     },
-    "deviceConnectionString": {
-      "type": "string",
-      "metadata": {
-        "description": "IoT Edge Device Connection String"
-      }
-    },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_DS1_v2",
+      "defaultValue": "Standard_B2ms",
       "metadata": {
         "description": "VM size"
       }
