@@ -4,12 +4,14 @@
     "parameters": {
       "vmName": {
         "type": "string",
+        "defaultValue":"testvm099899",
         "metadata": {
           "description": "Name of the VM"
         }
       },
       "osType": {
         "type": "string",
+        "defaultValue":"Windows",
         "allowedValues": [
           "Windows",
           "Linux"
@@ -18,20 +20,11 @@
           "description": "Type of OS on the existing vhd"
         }
       },
-      "osDiskVhdUri": {
-        "type": "string",
-        "metadata": {
-          "description": "Uri of the existing OS VHD in ARM standard or premium storage"
-        }
-      },
-      "dataDisk0VhdUri": {
-        "type": "string",
-        "metadata": {
-          "description": "Uri of the existing data disk VHD in ARM standard or premium storage"
-        }
-      },
+     
+    
       "vmSize": {
         "type": "string",
+        "defaultValue":"Standard_D2_v3",
         "metadata": {
           "description": "Size of the VM"
         }
@@ -124,31 +117,8 @@
           ]
         }
       },
-      {
-        "type": "Microsoft.Compute/disks",
-        "apiVersion": "2017-03-30",
-        "name": "[concat(parameters('vmName'), '_OSdisk')]",
-        "location": "[parameters('location')]",
-        "properties": {
-          "creationData": {
-            "createOption": "Import",
-            "sourceUri": "[parameters('osDiskVhdUri')]"
-          },
-          "osType": "[parameters('osType')]"
-        }
-      },
-      {
-        "type": "Microsoft.Compute/disks",
-        "apiVersion": "2017-03-30",
-        "name": "[concat(parameters('vmName'), '_Datadisk')]",
-        "location": "[parameters('location')]",
-        "properties": {
-          "creationData": {
-            "createOption": "Import",
-            "sourceUri": "[parameters('dataDisk0VhdUri')]"
-          }
-        }
-      },
+     
+    
       {
         "apiVersion": "2017-03-30",
         "type": "Microsoft.Compute/virtualMachines",
