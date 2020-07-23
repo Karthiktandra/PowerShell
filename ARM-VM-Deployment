@@ -16,6 +16,19 @@
           "description": "Password for the Virtual Machine."
         }
       },
+      "existingVNETName": {
+      "type": "string",
+      "defaultValue": "testvnet4444"
+      "metadata": {
+      "description": "VNET Name"
+      }
+      },
+      "existing subnet": {
+      "type": "string",
+      "defaultValue": "app123"
+      }
+      },
+     
       "dnsLabelPrefix": {
         "type": "string",
         "metadata": {
@@ -56,13 +69,9 @@
     "variables": {
       "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
       "nicName": "myVMNic",
-      "addressPrefix": "10.0.0.0/16",
-      "subnetName": "app123",
-      "subnetPrefix": "10.0.0.0/24",
       "publicIPAddressName": "myPublicIP",
-      "vmName": "SimpleWinVM",
-      "virtualNetworkName": "testvnet4444",
-      "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
+      "vmName": "SimpleWinVM"
+      "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('subnetName'))]",
       "networkSecurityGroupName": "default-NSG"
     },
     "resources": [
@@ -127,14 +136,6 @@
               "[variables('addressPrefix')]"
             ]
           },
-          "subnets": [
-            {
-              "name": "[variables('subnetName')]",
-              "properties": {
-                "addressPrefix": "[variables('subnetPrefix')]",
-                "networkSecurityGroup": {
-                  "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-                }
               }
             }
           ]
