@@ -18,7 +18,7 @@
       },
       "existingVNETName": {
       "type": "string",
-      "defaultValue": "testvnet4444"
+      "defaultValue": "testvnet4444",
       "metadata": {
       "description": "VNET Name"
       }
@@ -26,7 +26,6 @@
       "existing subnet": {
       "type": "string",
       "defaultValue": "app123"
-      }
       },
      
       "dnsLabelPrefix": {
