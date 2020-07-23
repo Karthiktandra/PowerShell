@@ -52,6 +52,7 @@
       }
     },
     "variables": {
+      "storageAccountName": "storagetest99900"
       "nicName": "myVMNic",
       "addressPrefix": "10.0.0.0/16",
       "subnetName": "app123",
